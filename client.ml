@@ -1,5 +1,4 @@
 open Eio.Std
-open Capnp_rpc.Std
 
 let () =
   Logs.set_level (Some Logs.Warning);
@@ -10,9 +9,7 @@ let callback_fn msg =
 
 let run_client service =
   let x = Echo.get service "client.ml" in
-  let () = traceln "%S" x in
-  Capability.with_ref (Echo.Callback.local callback_fn) @@ fun callback ->
-  Echo.heartbeat service "foo" callback
+  traceln "%S" x
 
 let connect net uri =
   Switch.run @@ fun sw ->
