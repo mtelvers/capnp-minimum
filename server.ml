@@ -10,7 +10,7 @@ let cap_file = "echo.cap"
 let serve config =
   Switch.run @@ fun sw ->
   let service_id = Capnp_rpc_unix.Vat_config.derived_id config "main" in
-  let restore = Restorer.single service_id (Echo.local) in
+  let restore = Restorer.single service_id (Foo.local) in
   let vat = Capnp_rpc_unix.serve ~sw ~restore config in
   match Capnp_rpc_unix.Cap_file.save_service vat service_id cap_file with
   | Error `Msg m -> failwith m

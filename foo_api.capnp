@@ -1,5 +1,5 @@
 @0xb287252b6cbed46e;
 
-interface Echo {
+interface Foo {
   get      @0 (msg :Text) -> (reply :Text);
 }

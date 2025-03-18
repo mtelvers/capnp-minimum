@@ -8,7 +8,7 @@ let callback_fn msg =
   traceln "Callback got %S" msg
 
 let run_client service =
-  let x = Echo.get service "client.ml" in
+  let x = Foo.get service "client.ml" in
   traceln "%S" x
 
 let connect net uri =

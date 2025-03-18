@@ -3,6 +3,6 @@
  (libraries eio_main capnp-rpc logs.fmt capnp-rpc-unix))
 
 (rule
- (targets echo_api.ml echo_api.mli)
- (deps    echo_api.capnp)
+ (targets foo_api.ml foo_api.mli)
+ (deps    foo_api.capnp)
  (action (run capnp compile -o %{bin:capnpc-ocaml} %{deps})))
