@@ -1,0 +1,8 @@
+(executables
+ (names client server)
+ (libraries eio_main capnp-rpc logs.fmt capnp-rpc-unix))
+
+(rule
+ (targets echo_api.ml echo_api.mli)
+ (deps    echo_api.capnp)
+ (action (run capnp compile -o %{bin:capnpc-ocaml} %{deps})))
